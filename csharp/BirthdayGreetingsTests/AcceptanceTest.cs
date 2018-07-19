@@ -1,5 +1,6 @@
 ﻿using NUnit.Framework;
 using System;
+using System.IO;
 using BirthdayGreetings;
 using netDumbster.smtp;
 
@@ -9,7 +10,7 @@ namespace BirthdayGreetingsTests
 	public class AcceptanceTest
 	{
 		private BirthdayService service;
-		private string FILE_NAME = "../../../BirthdayGreetings/employee_data.txt";
+		private string FILE_NAME = Path.GetDirectoryName(Path.GetDirectoryName(TestContext.CurrentContext.TestDirectory)) + "/../BirthdayGreetings/employee_data.txt";
 		private SimpleSmtpServer smtpServer;
 
 		[SetUp]
